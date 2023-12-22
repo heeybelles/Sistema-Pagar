@@ -14,7 +14,7 @@
    
 
 //Verificar os campos preenchidos
-    function verificarCamposPreenchidos() {
+      /*function verificarCamposPreenchidos() {
     var nome = document.getElementById('nome').value.trim();
     var cardNumber = document.getElementById('cardNumber').value.trim();
     var expiryDate = document.getElementById('expiryDate').value.trim();
@@ -22,7 +22,7 @@
     var btnEnviar = document.getElementById('btnEnviar');
 
     btnEnviar.disabled = nome === '' || cardNumber === '' || expiryDate === '' || cvv === '';
-}
+}*/
 
 //Exibe os dados de outras telas, como o metodo de pagamento, bandeira do cartão e o valor total
 var urlParams1 = new URLSearchParams(window.location.search);

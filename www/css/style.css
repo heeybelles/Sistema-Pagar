@@ -1,0 +1,14 @@
+/**/
+ @media screen and (min-width: 600px) {
+            .container{
+                width: 200px;
+            }
+
+            .label {
+                max-width: 200px;
+            }
+             input {
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+  }
+        }

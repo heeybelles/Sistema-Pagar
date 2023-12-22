@@ -17,25 +17,13 @@
 </head>
 <style>
     
-.data{
-    width:150px;
 
-}
-.cvv{
-    width:160px;
-    margin-left: 170px;
-  
-}
-.cv{
-     margin-left: 170px;
-    margin-top: -80px;
-}
 </style>
 <body>
    <nav >
          <br>
-         <ul><a href="tipoCartao.html"><i class="fa-solid fa-arrow-left" style="color: #871821; margin-left:10px; margin-top: 3px;"></i></a></ul>
-             <ul><h4>Pagamento</h4></ul>
+         <ul><a href="metodoPagar.html"><i class="fa-solid fa-arrow-left" style="color: #871821; margin-left:10px; margin-top: 3px;"></i></a></ul>
+             <ul><h4>Pagamento Etapa Final</h4></ul>
      </nav>
      <hr></hr>
     <br> 
@@ -43,7 +31,7 @@
         <center>
             
         <div class="card-valor">
-            <span class="card-title">R$</span><h3 id="valor"> </h3><br>
+            <span class="card-title">R$</span><h3 id="exibirValor"> </h3><br>
             
         </div>
         <h5></h5> <h5 class="tipoCartao"></h5>
@@ -70,7 +58,7 @@
         
         <div class="form-group">
             <label for="expiryDate">Validade:</label>
-            <input class="data" type="text" oninput="verificarCamposPreenchidos()" id="expiryDate" placeholder="MM/AA" required>
+            <input class="data" type="text" oninput="verificarCamposPreenchidos()" id="expiryDate" placeholder="MM/AA" >
         </div>
         <div class="form-group">
             <label class="cv" for="cvv">CVV:</label>
@@ -78,9 +66,9 @@
         </div>
         
        
-       
+       <center>
        <button type="submit" onclick="mostrarAlertas()" id="btnEnviar" >Enviar</button>
-       
+       </center>
       
     </form>
   
@@ -108,16 +96,13 @@
   var customerName = document.getElementById("nome").value;
   var dataHora = new Date();
   var dataHoraFormatada = dataHora.toLocaleString();
-  var mensagemAlerta = `Extrato de pagamento \nNome: ${customerName} \nValor Total: ${valorRecebido} \nDesconto: \nCompra no: ${paymentType} \nBandeira: ${opcaoSelecionada} \nData e Hora: ${dataHoraFormatada}`;
+  var mensagemAlerta = `Extrato de pagamento \nNome: ${customerName} \nValor Total: ${valorArmazenado} \nDesconto: \nCompra no: ${paymentType} \nBandeira: ${opcaoSelecionada} \nData e Hora: ${dataHoraFormatada}`;
 
   alert(mensagemAlerta);
 }
-var urlParams = new URLSearchParams(window.location.search);
-        var valorRecebido = urlParams.get('valor');
-        document.querySelector('#valor').textContent += " " + valorRecebido;
-        document.querySelector('#valor_total').textContent += " " + valorRecebido;
-
-
+ //Exibe o valor da tela inicial
+           var valorArmazenado = localStorage.getItem("valorN");
+        document.getElementById("exibirValor").textContent = valorArmazenado;
 
 </script>
 <script src="pagar.js"></script>
